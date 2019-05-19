@@ -12,8 +12,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 @AllArgsConstructor
 public class SchedulingConfig {
 
-
-    SimpMessagingTemplate simpMessagingTemplate;
+    private SimpMessagingTemplate simpMessagingTemplate;
 
     @Scheduled(fixedDelay = 3000)
     public void sendMessage() {
