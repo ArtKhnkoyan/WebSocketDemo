@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnDisConnect.setOnClickListener(this);
         btnSend.setOnClickListener(this);
 
-//         stompClient = Stomp.over(WebSocket.class, "ws://" + Constants.IP_ADDRESS + ":8080/example-endpoint/websocket");
+//         stompClient = Stomp.over(WebSocket.class, "ws://" + Constants.IP_ADDRESS + ":8080/websocket-example/websocket");
         stompClient = Stomp.over(WebSocket.class, "http://" + Constants.IP_ADDRESS + ":8080/websocket-example");
 
         stompClient.topic("/topic/hello").subscribe(topicMessage ->
@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        stompClient.disconnect();
         if (stompClient != null) {
+            stompClient.disconnect();
             stompClient = null;
         }
     }
