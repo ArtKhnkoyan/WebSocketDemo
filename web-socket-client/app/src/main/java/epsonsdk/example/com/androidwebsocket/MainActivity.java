@@ -10,6 +10,7 @@ import android.widget.EditText;
 import org.java_websocket.WebSocket;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 import rx.Subscriber;
 import ua.naiksoftware.stomp.Stomp;
 import ua.naiksoftware.stomp.client.StompClient;
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ButterKnife.bind(this);
         btnConnect.setOnClickListener(this);
         btnDisConnect.setOnClickListener(this);
         btnSend.setOnClickListener(this);
