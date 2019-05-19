@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package epsonsdk.example.com.androidwebsocket.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,9 +12,4 @@ import lombok.NoArgsConstructor;
 public class Message {
     private String from;
     private String text;
-    private String time;
-
-    public Message(String text) {
-        this.text = text;
-    }
 }
