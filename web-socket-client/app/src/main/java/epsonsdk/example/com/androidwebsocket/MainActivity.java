@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnSend.setOnClickListener(this);
 
 //         stompClient = Stomp.over(WebSocket.class, "ws://" + Constants.IP_ADDRESS + ":8080/example-endpoint/websocket");
-        stompClient = Stomp.over(WebSocket.class, "http://" + Constants.IP_ADDRESS + ":8080/websocket-example/websocket");
+        stompClient = Stomp.over(WebSocket.class, "http://" + Constants.IP_ADDRESS + ":8080/websocket-example");
 
         stompClient.topic("/topic/hello").subscribe(topicMessage ->
                 Log.i("myLog", "topicMessage.getPayload(): " + topicMessage.getPayload()));
